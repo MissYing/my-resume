@@ -43,6 +43,13 @@ ul {
 @mixin paddingB($paddingB: .625rem) {
 	padding-bottom: $paddingB;
 }
+//transform上下左右居中
+@mixin contentTransform() {
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 //背景
 .bg_def {

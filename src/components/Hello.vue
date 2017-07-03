@@ -1,5 +1,5 @@
 <template>
-    <div class="hello" v-loading.fullscreen.lock="fullscreenLoading">
+    <div class="hello">
         <h1>{{ msg }}</h1>
         <h2>Essential Links</h2>
         <ul>
@@ -25,8 +25,7 @@ export default {
     name: 'hello',
     data () {
         return {
-          msg: 'Welcome to Your Vue.js App',
-          fullscreenLoading: false
+          msg: 'Welcome to Your Vue.js App'
         }
     },
     mounted() {
@@ -34,14 +33,10 @@ export default {
     },
     methods: {
         init: function(){
-            this.fullscreenLoading = true
-            setTimeout(() => {
-              this.fullscreenLoading = false
-            }, 3000)
-            // this.$message({
-            //     type: 'success',
-            //     message: '登录成功'
-            // })
+            this.$message({
+                type: 'success',
+                message: '登录成功'
+            })
         }
     }
 }
