@@ -23,7 +23,8 @@
 	  	<!-- page -->
 	  	<el-pagination
 	    	layout="prev, pager, next"
-	    	:total="50">
+	    	:total="20"
+      		@current-change="handleCurrentChange">
 	  	</el-pagination>
 	</div>
 </template>
@@ -50,6 +51,21 @@
           address: '上海市普陀区金沙江路 1516 弄'
         }]
       }
+    },
+    methods: {
+      	handleCurrentChange(val) {
+      		console.log(val)
+        	console.log(`当前页: ${val}`);
+      	}
     }
   }
 </script>
+
+<style lang="scss">
+	@import '../assets/css/style.scss';
+	
+	.el-pagination {
+		text-align: center;
+		margin: 1rem 0 0;
+	}
+</style>

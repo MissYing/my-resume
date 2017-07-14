@@ -22,6 +22,8 @@ export default new Router({
       children: [
         {path: '/', component: resolve => require(['@/pages/BaseInfo'], resolve)},
         {path: '/baseInfo', component: resolve => require(['@/pages/BaseInfo'], resolve)},
+        {path: '/workHistory', component: resolve => require(['@/pages/WorkHistory'], resolve)},
+        {path: '/education', component: resolve => require(['@/pages/Education'], resolve)},
         {path: '/mongoose', component: resolve => require(['@/pages/Mongoose'], resolve)}
       ]
     }

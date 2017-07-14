@@ -1,5 +1,5 @@
 <template>
-    <div class="ying-baseInfo">
+    <div class="ying-workHistory">
         
     </div>
 </template>
@@ -7,7 +7,7 @@
 <script>
 
 export default {
-    name: 'BaseInfo',
+    name: 'WorkHistory',
     data () {
         return {
             
@@ -28,7 +28,7 @@ export default {
 <style lang="scss">
     @import '../assets/css/style.scss';
 
-    .ying-baseInfo {
+    .ying-workHistory {
         
     }
 </style>

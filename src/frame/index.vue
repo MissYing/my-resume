@@ -2,12 +2,12 @@
 	<div class="ying-index">
 		<PublicLeft :userInfo="userInfo"></PublicLeft>
 		<div class="public-right">
-		    <ul class="public-menu">
-		      <li :class="baseInfo"><router-link to="/baseInfo">基本信息</router-link></li>
-		      <li :class="workHistory"><router-link to="/workHistory">项目经验</router-link></li>
-		      <li :class="other"><router-link to="/other">教育经历</router-link></li>  
-		      <li :class="mongoose"><router-link to="/mongoose">mongoose个人信息增删改查</router-link></li> 
-		    </ul>
+		    <el-menu :default-active="activeIndex" mode="horizontal" @select="handleSelect">
+			  	<el-menu-item index="1"><router-link to="/baseInfo">基本信息</router-link></el-menu-item>
+			  	<el-menu-item index="2"><router-link to="/workHistory">项目经验</router-link></el-menu-item>
+			  	<el-menu-item index="3"><router-link to="/education">教育经历</router-link></el-menu-item>
+			  	<el-menu-item index="4"><router-link to="/mongoose">mongoose个人信息增删改查</router-link></el-menu-item>
+			</el-menu>
 	    	<router-view></router-view>
 	    </div>
 	</div>
@@ -20,34 +20,39 @@ export default {
 	name: 'Index',
 	data () {
 		return {
+			activeIndex: '1',
 			userInfo: {name: 'liying', phone: '15195601069', email: '2332893183@qq.com', github: 'https://coding.net/u/missYing/p/baseInfo/git'},
 		    baseInfo: false,
 		    workHistory: false,
-		    other: false,
+		    education: false,
 		    mongoose: false
 		}
 	},
-	mounted(){
+	mounted() {
 	    this.getUserInfo()
+	    console.log(this.activeIndex)
 	},
 	components: {
 		PublicLeft
 	},
 	methods: {
+		handleSelect(key, keyPath) {
+			console.log(key)
+        	this.activeIndex = key //默认选中项
+      	},
 		initActive: function(path) { // 初始化menu选中
 			switch(path){
-				case "/":
-				case "/baseInfo":
-					this.baseInfo = "active"
+				case "/workHistory":
+					this.activeIndex = '2'
 					break;
-				case "/other":
-					this.other = "active"
+				case "/education":
+					this.activeIndex = '3'
 					break;
 				case "/mongoose":
-					this.mongoose = "active"
+					this.activeIndex = '4'
 					break;
 				default:
-					this.workHistory = "active"
+					this.activeIndex = '1'
 			}
 		},
 	    getUserInfo: function(e) {
@@ -73,23 +78,6 @@ export default {
 	    }
 	},
 	watch: {
-		'$route' (to, from) { // 监听路由变化
-			switch(from.path){
-				case "/":
-				case "/baseInfo":
-					this.baseInfo = ""
-					break;
-				case "/other":
-					this.other = ""
-					break;
-				case "/mongoose":
-					this.mongoose = ""
-					break;
-				default:
-					this.workHistory = ""
-			}
-			this.initActive(to.path)
-		}
 	}
 }
 </script>
@@ -103,21 +91,23 @@ export default {
 		position: relative;
 		.public-right {
 			margin-left: 14.375rem;
-			.public-menu {
-				background-color: #f0f0f0;
+			.el-menu {
 				margin-bottom: 1.5rem;
-				li {
-					display: inline-block;
-					a {
-						padding: .625rem .9375rem;
-						display: block;
+				overflow: hidden;
+				.el-menu:after, .el-menu:before {
+					display: none;
+				}
+				.el-menu-item {
+					line-height: 2.8125rem;
+					height: 2.8125rem;
+					border-bottom-width: 0;
+					&:hover {
+						border-bottom: none;
 					}
 				}
-				li.active {
+				.is-active {
 					background-color: #42b983;
-					a {
-						color: #fff;
-					}
+					color: #fff;
 				}
 			}
 		}
