@@ -30,7 +30,6 @@ export default {
 	},
 	mounted() {
 	    this.getUserInfo()
-	    console.log(this.activeIndex)
 	},
 	components: {
 		PublicLeft
@@ -87,7 +86,8 @@ export default {
 
 	.ying-index {
 		width: 80%;
-		margin: 1.25rem auto;
+		margin: auto;
+		padding-top: 1.25rem;
 		position: relative;
 		.public-right {
 			margin-left: 14.375rem;

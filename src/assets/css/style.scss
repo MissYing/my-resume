@@ -51,6 +51,12 @@ ul {
     transform: translate(-50%, -50%);
 }
 
+//bg
+@mixin bg() {
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
 //背景
 .bg_def {
 	background-color: #fff;
