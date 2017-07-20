@@ -52,7 +52,7 @@
 			name: '李莹',
 			phone: 15195601069,
 			email: '2332893183@qq.com',
-			github: 'https://coding.net/u/missYing/p/baseInfo/git'
+			github: 'https://coding.net/u/missYing/p/my-resume/git'
         }, {
 			name: '王小虎',
 			phone: 15195601069,

@@ -21,7 +21,7 @@ export default {
 	data () {
 		return {
 			activeIndex: '1',
-			userInfo: {name: 'liying', phone: '15195601069', email: '2332893183@qq.com', github: 'https://coding.net/u/missYing/p/baseInfo/git'},
+			userInfo: {name: 'liying', phone: '15195601069', email: '2332893183@qq.com', github: 'https://coding.net/u/missYing/p/my-resume/git'},
 		    baseInfo: false,
 		    workHistory: false,
 		    education: false,
@@ -98,11 +98,16 @@ export default {
 					display: none;
 				}
 				.el-menu-item {
-					line-height: 2.8125rem;
-					height: 2.8125rem;
+					line-height: inherit;
+					height: inherit;
 					border-bottom-width: 0;
 					&:hover {
 						border-bottom: none;
+					}
+					a {
+						line-height: 2.8125rem;
+						height: 2.8125rem;
+						display: block;
 					}
 				}
 				.is-active {
