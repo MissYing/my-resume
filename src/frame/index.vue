@@ -28,11 +28,7 @@ export default {
 	data () {
 		return {
 			activeIndex: '1',
-			userInfo: {name: 'liying', phone: '15195601069', email: '2332893183@qq.com', github: 'https://coding.net/u/missYing/p/my-resume/git'},
-		    baseInfo: false,
-		    workHistory: false,
-		    education: false,
-		    mongoose: false
+			userInfo: {name: 'liying', phone: '15195601069', email: '2332893183@qq.com', github: 'https://coding.net/u/missYing/p/my-resume/git'}
 		}
 	},
 	mounted() {
