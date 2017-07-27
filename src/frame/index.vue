@@ -11,10 +11,10 @@
 	    </ul>
 		<div class="public-right">
 		    <el-menu :default-active="activeIndex" mode="horizontal" @select="handleSelect">
-			  	<el-menu-item index="1"><router-link to="/baseInfo">基本信息</router-link></el-menu-item>
-			  	<el-menu-item index="2"><router-link to="/workHistory">项目经验</router-link></el-menu-item>
-			  	<el-menu-item index="3"><router-link to="/education">教育经历</router-link></el-menu-item>
-			  	<el-menu-item index="4"><router-link to="/mongoose">mongoose个人信息增删改查</router-link></el-menu-item>
+			  	<el-menu-item index="1"><router-link to="baseInfo">基本信息</router-link></el-menu-item>
+			  	<el-menu-item index="2"><router-link to="workHistory">项目经验</router-link></el-menu-item>
+			  	<el-menu-item index="3"><router-link to="education">教育经历</router-link></el-menu-item>
+			  	<el-menu-item index="4"><router-link to="mongoose">mongoose个人信息增删改查</router-link></el-menu-item>
 			</el-menu>
 	    	<router-view></router-view>
 	    </div>
@@ -79,6 +79,10 @@ export default {
 	    }
 	},
 	watch: {
+		'$route' (to, from) {
+	      // 对路由变化作出响应...
+	      this.initActive(to.path)
+	    }
 	}
 }
 </script>
